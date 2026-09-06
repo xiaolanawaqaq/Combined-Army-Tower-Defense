@@ -1,0 +1,22 @@
+{
+  "name": "merge-td-multiplayer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three-player online co-op server for Merge TD",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "migrate": "node server/migrate.js",
+    "check": "node --check server/index.js && node --check server/api-routes.js && node --check server/db.js && node --check server/migrate.js && node --check server/room-manager.js && node --check server/game-session.js && node --check server/transport.js && node --check shared/game-types.js && node --check shared/game-engine.js && node --check server/services/auth.js && node --check server/services/platform-auth.js && node --check server/services/mailer.js && node --check server/repositories/user-repo.js && node --check server/repositories/session-repo.js && node --check server/repositories/progress-repo.js && node --check server/repositories/daily-repo.js && node --check server/repositories/wallet-repo.js && node --check server/repositories/identity-repo.js && node --check server/repositories/email-repo.js && node --check server/repositories/profile-repo.js && node --check server/repositories/stats-repo.js && node --check server/geometry-test.js && node --check server/engine-regression-test.js && node --check server/versus-regression-test.js && node server/geometry-test.js && node server/engine-regression-test.js && node server/versus-regression-test.js",
+    "smoke": "node server/smoke-test.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "pg": "^8.22.0",
+    "qrcode": "^1.5.4",
+    "ws": "^8.21.3"
+  }
+}
